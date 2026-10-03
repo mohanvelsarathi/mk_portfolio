@@ -2,6 +2,7 @@ import { Container } from '../layout/Container';
 import { Section } from '../layout/Section';
 import { SectionHeader } from '../ui/SectionHeader';
 import { motion } from 'framer-motion';
+import { profile } from '../../data/portfolio';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -21,7 +22,7 @@ const itemVariants = {
 
 export function About() {
   return (
-    <Section id="about" subtle className="min-h-screen w-full flex items-center py-20">
+    <Section id="about" subtle className="min-h-[100dvh] w-full flex flex-col justify-center py-20">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_2.5fr] gap-8 md:gap-16 lg:gap-24 items-center max-w-5xl mx-auto">
           {/* Left: Profile Image */}
@@ -34,8 +35,8 @@ export function About() {
           >
             <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[var(--color-surface-subtle)] border-2 border-[var(--color-border)] shadow-[var(--shadow-card)] flex flex-col items-center justify-center">
               <img 
-                src="/About_img.jpg" 
-                alt="Balaji S" 
+                src="/Manjunath_Profile.jpeg" 
+                alt={profile.name} 
                 className="w-full h-full object-cover object-top"
               />
             </div>
@@ -52,13 +53,14 @@ export function About() {
             <motion.div variants={itemVariants}>
               <SectionHeader
                 eyebrow="About"
-                heading="Building with Java, learning every day."
+                heading="Building with Java, growing with every project."
+                headingClassName="text-[24px] lg:text-[28px] xl:text-[32px] xl:whitespace-nowrap"
               />
             </motion.div>
             
             <motion.div variants={itemVariants} className="space-y-4 text-[16px] text-[var(--color-text-secondary)] leading-relaxed mt-4 text-justify">
               <p>
-                I'm <strong>Balaji S</strong>, an aspiring <strong>Java Backend Developer</strong> with a strong foundation in Java, Spring Boot, REST APIs, and MySQL. I enjoy building structured backend solutions, designing RESTful APIs, working with databases, and solving application-level problems through clean and reliable code. I'm looking to start my career in a <strong>Java Backend Developer</strong> role where I can contribute to building dependable software, support the team's development goals, and continuously strengthen my backend engineering skills.
+                I’m <strong>Manjunath Kesarur</strong>, an aspiring <strong>Java Full Stack Developer</strong> with a strong foundation in Java, Spring Boot, Spring Security, REST APIs, Hibernate, and MySQL. I enjoy building secure backend applications, designing RESTful APIs, working with databases, and solving application-level problems through clean and reliable code. I’m looking to start my career as a <strong>Java Full Stack Developer</strong>, where I can contribute to building practical software solutions, collaborate with a development team, and continuously strengthen my full-stack development skills.
               </p>
             </motion.div>
           </motion.div>

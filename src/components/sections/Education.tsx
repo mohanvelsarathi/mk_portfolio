@@ -60,7 +60,7 @@ function CertificationItem({ title, issuer, mode }: { title: string; issuer: str
 
 export function Education() {
   return (
-    <Section id="education" subtle>
+    <Section id="education" subtle className="min-h-[100dvh] w-full flex flex-col justify-center py-20">
       <Container>
         {/* Header */}
         <motion.div 

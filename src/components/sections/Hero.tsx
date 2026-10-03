@@ -23,7 +23,7 @@ export function Hero() {
   const [displayText, setDisplayText] = useState('');
 
   useEffect(() => {
-    const role = 'Java Backend Developer';
+    const role = profile.headline;
     let currentCharIndex = 0;
     let timeoutId: number;
 
@@ -43,14 +43,14 @@ export function Hero() {
   const scrollToProjects = (e: React.MouseEvent) => {
     e.preventDefault();
     const el = document.getElementById('projects');
-    if (el) window.scrollTo({ top: el.offsetTop - 64, behavior: 'smooth' });
+    if (el) window.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
   };
 
   return (
     <section
       id="home"
       data-testid="hero-section"
-      className="min-h-screen flex items-center pt-16"
+      className="min-h-[100dvh] w-full flex flex-col justify-center pt-16"
       style={{ background: 'var(--color-background)' }}
     >
       <Container className="w-full py-20 md:py-0">
@@ -70,9 +70,9 @@ export function Hero() {
                 {profile.name}
               </h1>
               {/* Headline */}
-              <p className="text-[15px] sm:text-[18px] lg:text-[24px] font-semibold text-[var(--color-text-secondary)] mt-2 lg:mt-3 min-h-[1.5em]" aria-label="Java Backend Developer">
+              <p className="text-[15px] sm:text-[18px] lg:text-[24px] font-semibold text-[var(--color-text-secondary)] mt-2 lg:mt-3 min-h-[1.5em]" aria-label={profile.headline}>
                 {displayText}
-                {displayText !== 'Java Backend Developer' && (
+                {displayText !== profile.headline && (
                   <span className="animate-pulse">|</span>
                 )}
               </p>
@@ -125,7 +125,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="hero-github-link"
-                aria-label="Balaji S GitHub profile (opens in new tab)"
+                aria-label={`${profile.name} GitHub profile (opens in new tab)`}
                 className="group inline-flex w-full sm:w-auto justify-center items-center gap-2 px-5 py-3 rounded-md font-semibold text-[14px] lg:text-[15px] bg-white dark:bg-white/5 border border-[var(--color-border)] text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors duration-200 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="transition-transform group-hover:scale-110">
@@ -145,9 +145,9 @@ export function Hero() {
           >
             <div className="relative w-[220px] sm:w-[260px] lg:w-full lg:max-w-[360px] aspect-square rounded-full overflow-hidden border-4 border-[var(--color-accent)] shadow-xl lg:shadow-2xl">
               <img 
-                src="/profile.jpg" 
+                src="/Manjunath_Profile.jpeg" 
                 alt={profile.name}
-                className="w-full h-full object-cover bg-[var(--color-surface)]"
+                className="w-full h-full object-cover object-[center_0.2px] bg-[var(--color-surface)]"
                 onError={(e) => {
                   e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(profile.name)}&size=512&background=random`;
                 }}

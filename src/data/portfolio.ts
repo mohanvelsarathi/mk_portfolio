@@ -1,24 +1,25 @@
 // ============================================================
-// Balaji S Portfolio — Data Layer
+// Manjunath Kesarur Portfolio — Data Layer
 // Single source of truth for all portfolio content
 // Sourced strictly from the resume
 // ============================================================
 
 export const profile = {
-  name: 'Balaji S',
-  initials: 'BS',
-  headline: 'Java Backend Developer',
-  eyebrow: 'JAVA BACKEND',
-  location: 'Vellore, Tamil Nadu',
-  email: 'balajisrinivasan360@gmail.com',
-  phone: '+91 8489864026',
-  githubProfile: 'https://github.com/balajisrinivasan360-glitch',
-  resumeUrl: '/Balaji-S-Java-Developer-Resume.pdf',
-  resumeFilename: 'Balaji-S-Java-Developer-Resume.pdf',
+  name: 'Manjunath Kesarur',
+  initials: 'MK',
+  headline: 'Java Full Stack Developer',
+  eyebrow: 'JAVA FULL STACK',
+  location: 'Bengaluru, India',
+  email: 'manjunath.dev05@gmail.com',
+  phone: '+91-8618241316',
+  githubProfile: 'https://github.com/ManjunathKesarur',
+  linkedInProfile: 'https://linkedin.com/in/manjunath-kesarur',
+  resumeUrl: '/Manjunath-Kesarur-Resume.pdf',
+  resumeFilename: 'Manjunath-Kesarur-Resume.pdf',
   summary:
-    'Java Backend Developer fresher with hands-on project experience in Java, Spring Boot, REST APIs, and MySQL. Strong foundation in object-oriented programming, database management, and backend development. Built an Employee Management System using Spring Boot, MySQL, and RESTful APIs. Eager to contribute to a software development team and grow as a Java Backend Developer.',
+    'Motivated Computer Science Engineering graduate seeking a Java Full Stack Developer position. Skilled in Java, Spring Boot, Spring Security, Hibernate, RESTful APIs, SQL, HTML, CSS, and JavaScript, with hands-on experience building secure backend applications.',
   heroCopy:
-    'Building reliable backend systems with Java and Spring Boot. Experienced in RESTful API design, MySQL database management, and layered backend architecture through hands-on project work.',
+    'Building reliable web applications with Java and Spring Boot. Experienced in RESTful API design, database management, and full-stack development through hands-on project work.',
 } as const;
 
 // ============================================================
@@ -29,38 +30,37 @@ export interface SkillCategory {
   category: string;
   description: string;
   skills: string[];
+  icon: string;
 }
 
 export const skills: SkillCategory[] = [
   {
-    id: 'java-core',
-    category: 'Java Core',
-    description: 'Core Java concepts for building strong backend logic.',
-    skills: ['Java', 'OOPS', 'Collections', 'Exception Handling', 'Servlets'],
+    id: 'languages',
+    category: 'Languages',
+    description: 'Programming languages and markup for building applications.',
+    skills: ['Java', 'JavaScript', 'SQL', 'HTML5', 'CSS3'],
+    icon: '/icon-languages-code.png',
   },
   {
-    id: 'spring',
-    category: 'Spring',
-    description: 'Spring ecosystem for building robust and secure applications.',
-    skills: ['Spring', 'Spring Boot', 'Spring MVC', 'Spring Security'],
+    id: 'frameworks',
+    category: 'Frameworks & Libraries',
+    description: 'Frameworks and libraries for building robust and secure applications.',
+    skills: ['Spring Boot', 'Spring Security', 'Spring MVC', 'Spring Data JPA', 'Hibernate', 'Thymeleaf'],
+    icon: '/icon-frameworks-layers.png',
   },
   {
-    id: 'api-dev',
-    category: 'API Development',
-    description: 'Design and implement RESTful services and secure APIs.',
-    skills: ['REST APIs', 'RESTful Web Services', 'CRUD Operations', 'Authentication', 'Authorization', 'OTP Validation'],
+    id: 'databases-cloud',
+    category: 'Databases & Cloud',
+    description: 'Work with relational data and cloud services.',
+    skills: ['MySQL', 'JDBC', 'AWS (EC2, S3, IAM)'],
+    icon: '/icon-database-cloud.png',
   },
   {
-    id: 'database',
-    category: 'Database',
-    description: 'Work with relational data and ensure persistence with efficiency.',
-    skills: ['MySQL', 'SQL', 'JDBC', 'Hibernate'],
-  },
-  {
-    id: 'architecture-tools',
-    category: 'Architecture & Tools',
+    id: 'tools-architecture',
+    category: 'Tools & Architecture',
     description: 'Structure, version, build and test with the right tools.',
-    skills: ['MVC', 'Layered Architecture', 'Git', 'GitHub', 'Maven', 'Postman'],
+    skills: ['Git', 'GitHub', 'Postman', 'Eclipse', 'VS Code', 'RESTful APIs', 'CI/CD', 'Agile Methodology'],
+    icon: '/icon-tools-gitbranch.png',
   },
 ];
 
@@ -78,19 +78,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'hirehub',
+    title: 'HireHub – Job Recruitment Platform (API)',
+    description:
+      'A role-based job recruitment REST API enabling recruiters to manage job postings and job seekers to search and apply for available jobs.',
+    technologies: ['Spring Boot', 'Spring Security', 'MySQL'],
+    highlights: [
+      'Implemented Spring Security authentication and role-based authorization for ADMIN, RECRUITER, and JOB_SEEKER roles to secure application endpoints.',
+      'Built RESTful APIs for job and application management with pagination, sorting, custom database queries, ownership-based authorization, and centralized exception handling.',
+    ],
+    githubUrl: 'https://github.com/ManjunathKesarur/HireHub',
+  },
+  {
     id: 'ems',
     title: 'Employee Management System',
     description:
-      'A Spring Boot–based Employee Management System to manage employee information through RESTful APIs. Designed with a layered backend architecture and MySQL for persistent data storage.',
-    technologies: ['Java', 'Spring Boot', 'MySQL', 'REST API'],
+      'An Employee Management System with RESTful APIs for employee CRUD operations, secured using Spring Security authentication and role-based access control (RBAC).',
+    technologies: ['Java', 'Spring Boot', 'Spring Security', 'MySQL', 'Hibernate'],
     highlights: [
-      'RESTful CRUD operations for employee management via Spring MVC',
-      'Controller / Service / Repository layered backend architecture',
-      'Spring Security authentication and authorization for secure user access',
-      'OTP validation with centralized global exception handling',
-      'API testing with Postman and database management with MySQL Workbench',
+      'Implemented server-side validation, pagination, and automated email functionality using Spring Validation and JavaMailSender.',
+      'Integrated MySQL using Spring Data JPA and implemented centralized Global Exception Handling for consistent error responses.',
     ],
-    githubUrl: 'https://github.com/balajisrinivasan360-glitch/ems',
+    githubUrl: 'https://github.com/ManjunathKesarur/ems',
   },
 ];
 
@@ -110,18 +119,18 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
-    id: 'strydo',
-    organization: 'STRYDO Technologies Pvt. Ltd.',
-    role: 'UI/UX Designer Intern',
-    startDate: 'Jul 2025',
-    endDate: 'Aug 2025',
-    location: 'Vellore',
+    id: 'jspiders',
+    organization: 'JSpiders',
+    role: 'Java Full Stack Intern',
+    startDate: 'Feb 2026',
+    endDate: 'May 2026',
+    location: 'Bengaluru, India',
     responsibilities: [
-      'Applied UI/UX design principles to create intuitive and user-friendly interface designs',
-      'Developed wireframes, user flows, prototypes, and mockups',
-      'Collaborated with the design team throughout the product design process',
+      'Developed and tested 10+ RESTful API endpoints and CRUD backend modules using Java, Spring Boot, Hibernate, and MySQL.',
+      'Performed manual and API testing across 15+ endpoints using Postman to validate request handling, responses, and error scenarios.',
+      'Worked with Git and GitHub for version control and followed Agile development practices while building Java-based application modules.',
     ],
-    tools: ['Figma', 'Adobe Photoshop', 'ChatGPT', 'Gemini'],
+    tools: ['Java', 'Spring Boot', 'Hibernate', 'MySQL', 'Postman', 'Git', 'GitHub'],
   },
 ];
 
@@ -141,21 +150,12 @@ export interface Education {
 export const education: Education[] = [
   {
     id: 'be-cse',
-    institution: "Ganadipathy Tulsi's Jain Engineering College",
-    qualification: 'B.E. Computer Science and Engineering',
-    startYear: 2023,
+    institution: 'East-West Institute of Technology',
+    qualification: 'B.E. Computer Science & Engineering',
+    startYear: 2022,
     endYear: 2026,
-    score: '8.0 / 10',
+    score: '7.85 / 10',
     scoreLabel: 'CGPA',
-  },
-  {
-    id: 'diploma-mech',
-    institution: 'Guru Raagavindra Polytechnic College',
-    qualification: 'Diploma in Mechanical Engineering',
-    startYear: 2015,
-    endYear: 2018,
-    score: '83%',
-    scoreLabel: 'Percentage',
   },
 ];
 
@@ -171,22 +171,16 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
-    id: 'uiux-intern',
-    title: 'UI/UX Designing Internship',
-    issuer: 'STRYDO Technologies Pvt. Ltd.',
-    mode: 'Offline',
-  },
-  {
-    id: 'cloud-da',
-    title: 'Cloud Computing and Data Analytics',
-    issuer: 'Naan Mudhalvan',
-    mode: 'Online',
-  },
-  {
     id: 'java-fullstack',
-    title: 'Java Backend Developer',
-    issuer: 'JSpiders Institute',
+    title: 'Java Full Stack Development Certification',
+    issuer: 'JSpiders',
     mode: 'Offline',
+  },
+  {
+    id: 'aws-cloud',
+    title: 'AWS Academy Cloud Foundations',
+    issuer: 'AWS Academy',
+    mode: 'Online',
   },
 ];
 
@@ -198,4 +192,5 @@ export const aboutBlocks = [
   { id: 'spring-boot', label: 'Spring Boot', description: 'Backend Framework' },
   { id: 'rest-apis', label: 'REST APIs', description: 'API Design & Testing' },
   { id: 'mysql', label: 'MySQL', description: 'Database Management' },
+  { id: 'react', label: 'Web Dev', description: 'HTML, CSS, JS' },
 ] as const;

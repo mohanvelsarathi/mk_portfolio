@@ -21,7 +21,7 @@ const itemVariants = {
 
 export function Contact() {
   return (
-    <Section id="contact" subtle className="min-h-screen w-full flex items-center py-20">
+    <Section id="contact" subtle className="min-h-[100dvh] w-full flex flex-col justify-center py-20">
       <Container>
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -36,7 +36,7 @@ export function Contact() {
               Let's <span className="text-[var(--color-accent)]">Connect</span>
             </h2>
             <p className="text-[17px] text-[var(--color-text-secondary)] max-w-2xl mx-auto leading-relaxed">
-              I'm looking for an opportunity to start my career as a Java Backend Developer and contribute with my foundation in Java, Spring Boot, REST APIs, and MySQL.
+              I'm looking for an opportunity to start my career as a Java Full Stack Developer and contribute with my foundation in Java, Spring Boot, REST APIs, and MySQL.
             </p>
           </motion.div>
 
@@ -104,7 +104,7 @@ export function Contact() {
               </div>
               <div className="text-center">
                 <div className="text-[13px] font-bold text-[var(--color-text-primary)] mb-1 uppercase tracking-wider">GitHub</div>
-                <div className="text-[14px] text-[var(--color-text-secondary)] text-ellipsis overflow-hidden max-w-[200px] whitespace-nowrap" title="github.com/balajisrinivasan360-glitch">github.com/balajisrinivasan...</div>
+                <div className="text-[14px] text-[var(--color-text-secondary)] text-ellipsis overflow-hidden max-w-[200px] whitespace-nowrap" title="github.com/ManjunathKesarur">github.com/ManjunathKesarur</div>
               </div>
             </motion.a>
           </motion.div>

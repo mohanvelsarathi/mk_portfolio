@@ -21,20 +21,10 @@ const itemVariants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 };
 
-const getIconPathForCategory = (id: string) => {
-  switch (id) {
-    case 'java-core': return '/icon-java.png';
-    case 'spring': return '/icon-spring.png';
-    case 'api-dev': return '/icon-api.png';
-    case 'database': return '/icon-database.png';
-    case 'architecture-tools': return '/icon-architecture.png';
-    default: return '/icon-java.png';
-  }
-};
 
 export function Skills() {
   return (
-    <Section id="skills">
+    <Section id="skills" className="min-h-[100dvh] w-full flex flex-col justify-center py-20">
       <Container>
         <SectionHeader
           eyebrow="Skills"
@@ -61,7 +51,6 @@ export function Skills() {
             className="flex flex-col gap-6 relative"
           >
             {skills.map((category) => {
-              const iconPath = getIconPathForCategory(category.id);
               
               return (
                 <motion.div variants={itemVariants} key={category.id} className="relative pl-14">
@@ -72,8 +61,8 @@ export function Skills() {
                   <div className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl p-5 shadow-sm">
                     <div className="flex items-start gap-4">
                       {/* Icon */}
-                      <div className="w-16 h-16 rounded-full bg-[var(--color-surface-subtle)] border border-[var(--color-border)] flex items-center justify-center shrink-0">
-                        <img src={iconPath} alt={category.category} className="w-9 h-9 object-contain dark:invert" />
+                      <div className="w-20 h-20 rounded-full bg-[var(--color-surface-subtle)] border border-[var(--color-border)] flex items-center justify-center shrink-0">
+                        <img src={category.icon} alt={`${category.category} icon`} className="w-[85%] h-[85%] object-contain drop-shadow-[0_0_1px_var(--color-accent)] contrast-125" />
                       </div>
                       
                       {/* Title & Description */}
@@ -111,10 +100,10 @@ export function Skills() {
           {/* Horizontal Connecting Line (Desktop Only) */}
           <motion.div 
             initial={{ width: 0 }}
-            whileInView={{ width: '80%' }}
+            whileInView={{ width: '75%' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
-            className="hidden lg:block absolute top-10 left-[10%] border-t-2 border-dashed border-[var(--color-border)] -z-10 origin-left" 
+            className="hidden lg:block absolute top-12 left-[12.5%] border-t-2 border-dashed border-[var(--color-border)] -z-10 origin-left" 
           />
 
           {/* Grid Container */}
@@ -123,21 +112,20 @@ export function Skills() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-5 gap-y-12 gap-x-6"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-8"
           >
             
             {skills.map((category) => {
-              const iconPath = getIconPathForCategory(category.id);
               
               return (
                 <motion.div variants={itemVariants} key={category.id} className="flex flex-col items-center text-center relative group">
                   
                   {/* Icon Node */}
                   <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm flex items-center justify-center z-10 relative group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-32 h-32 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm flex items-center justify-center z-10 relative group-hover:scale-110 transition-transform duration-300">
                       {/* Inner glowing circle */}
-                      <div className="absolute inset-3 rounded-full bg-[var(--color-accent)]/10" />
-                      <img src={iconPath} alt={category.category} className="w-16 h-16 object-contain relative z-20 dark:invert" />
+                      <div className="absolute inset-2 rounded-full bg-[var(--color-accent)]/10" />
+                      <img src={category.icon} alt={`${category.category} icon`} className="w-[85%] h-[85%] object-contain relative z-20 drop-shadow-[0_0_1px_var(--color-accent)] contrast-125" />
                     </div>
                     {/* Vertical connecting line to title */}
                     <div className="absolute top-full left-1/2 -translate-x-1/2 w-0.5 h-6 bg-[var(--color-accent)]/30" />
@@ -156,7 +144,7 @@ export function Skills() {
                   </div>
 
                   {/* Skill Chips */}
-                  <div className="flex flex-wrap justify-center gap-2 mt-auto w-full">
+                  <div className="flex flex-wrap justify-center gap-2 mt-auto pt-4 w-full">
                     {category.skills.map(skill => (
                       <span 
                         key={skill}

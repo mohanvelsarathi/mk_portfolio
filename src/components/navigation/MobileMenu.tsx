@@ -1,12 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import type { LucideIcon } from 'lucide-react';
-
-export interface NavItem {
-  name: string;
-  url: string;
-  icon: LucideIcon;
-}
+import type { NavItem } from '../../config/navigation';
+import { profile } from '../../data/portfolio';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -52,8 +47,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, activeSection }: MobileM
     setTimeout(() => {
       const el = document.querySelector(href);
       if (el) {
-        const navHeight = 64;
-        const top = (el as HTMLElement).offsetTop - navHeight;
+        const top = (el as HTMLElement).offsetTop;
         window.scrollTo({ top, behavior: 'smooth' });
       }
     }, 300); // Increased timeout slightly to allow exit animation to run
@@ -89,7 +83,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, activeSection }: MobileM
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--color-border)]">
-              <span className="font-bold text-[var(--color-text-primary)]">Balaji S</span>
+              <span className="font-bold text-[var(--color-text-primary)]">{profile.name}</span>
               <button
                 onClick={onClose}
                 aria-label="Close navigation menu"
@@ -134,8 +128,8 @@ export function MobileMenu({ isOpen, onClose, navLinks, activeSection }: MobileM
             {/* Footer actions */}
             <div className="p-4 border-t border-[var(--color-border)]">
               <a
-                href="/Balaji-S-Java-Developer-Resume.pdf"
-                download="Balaji-S-Java-Developer-Resume.pdf"
+                href={profile.resumeUrl}
+                download={profile.resumeFilename}
                 className="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-md text-[14px] font-semibold bg-[var(--color-accent)] text-[#1A1A1A] hover:bg-[var(--color-accent-hover)] hover:text-[#1A1A1A] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-2"
                 onClick={onClose}
               >

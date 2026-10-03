@@ -1,32 +1,50 @@
-# React + TypeScript + Vite
+# Manjunath Kesarur - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, highly responsive personal portfolio for **Manjunath Kesarur**, a Java Full Stack Developer. Designed with clean aesthetics, smooth animations, and optimized for recruiters and hiring managers.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Modern UI/UX**: Clean and professional interface focused on readability.
+- **Smooth Scrolling**: Implemented using [Lenis](https://github.com/studio-freight/lenis) for a fluid native-feeling scroll experience.
+- **Dynamic Projects Carousel**: Swipeable and interactive projects section built with Framer Motion.
+- **Full Viewport Sections**: Each section snaps to `100vh` for a pristine slide-like presentation.
+- **Dark/Light Mode**: Seamlessly switch between themes based on system preference or manual toggle.
+- **Fully Responsive**: Optimized layout across mobile, tablet, and desktop devices.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Framework**: [React 19](https://react.dev/) with [Vite](https://vitejs.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Scroll**: [Lenis](https://github.com/studio-freight/lenis)
 
-## Expanding the Oxlint configuration
+## Local Development
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+Follow these steps to run the project locally:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ManjunathKesarur/portfolio.git
+   cd portfolio
+   ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## License
+
+Designed and developed by Manjunath Kesarur. All rights reserved.

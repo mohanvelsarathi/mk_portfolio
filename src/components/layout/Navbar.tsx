@@ -4,17 +4,9 @@ import { Container } from '../layout/Container';
 import { ThemeToggle } from '../navigation/ThemeToggle';
 import { MobileMenu } from '../navigation/MobileMenu';
 import { useActiveSection } from '../../hooks/useActiveSection';
-import { User, Code, Briefcase, GraduationCap, Mail } from 'lucide-react';
+import { NAV_ITEMS } from '../../config/navigation';
 import { cn } from '../../lib/utils';
-
-const NAV_ITEMS = [
-  { name: 'Home', url: '#home', icon: User },
-  { name: 'About', url: '#about', icon: User },
-  { name: 'Skills', url: '#skills', icon: Code },
-  { name: 'Projects', url: '#projects', icon: Briefcase },
-  { name: 'Education', url: '#education', icon: GraduationCap },
-  { name: 'Contact', url: '#contact', icon: Mail },
-];
+import { profile } from '../../data/portfolio';
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,8 +17,7 @@ export function Navbar() {
     const sectionId = href.replace('#', '');
     const el = document.getElementById(sectionId);
     if (el) {
-      const navHeight = 64;
-      const top = el.offsetTop - navHeight;
+      const top = el.offsetTop;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
@@ -56,7 +47,7 @@ export function Navbar() {
               onClick={(e) => handleNavClick(e, '#home')}
               className="font-bold text-[17px] text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] rounded-sm"
             >
-              Balaji S
+              {profile.initials}
             </a>
           </div>
 
@@ -96,8 +87,8 @@ export function Navbar() {
 
             {/* Download Resume — desktop */}
             <a
-              href="/Balaji-S-Java-Developer-Resume.pdf"
-              download="Balaji-S-Java-Developer-Resume.pdf"
+              href={profile.resumeUrl}
+              download={profile.resumeFilename}
               data-testid="nav-resume-btn"
               className={cn(
                 'hidden md:inline-flex items-center gap-1.5',
