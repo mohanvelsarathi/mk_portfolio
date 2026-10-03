@@ -47,4 +47,4 @@ Follow these steps to run the project locally:
 
 ## License
 
-Designed and developed by Manjunath Kesarur. All rights reserved.
+Designed and developed by DWS. All rights reserved.
